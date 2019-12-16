@@ -43,12 +43,12 @@ head(bike)
 
 ## Exploratory Data Analysis
 
-```{r pressure, echo=FALSE}
+```{r, echo=FALSE}
 count_temp <- ggplot(bike, aes(x = temp, y = count, color = temp)) + geom_point(alpha = 0.5)
 count_temp
 ```
 
-```{r pressure, echo=FALSE}
+```{r, echo=FALSE}
 bike$datetime <- as.POSIXct(bike$datetime)
 count_date <- ggplot(bike, aes(x = datetime, y = count)) + 
         geom_point(aes(color = temp),alpha = 0.5) +  scale_colour_gradient(high='red',low = "blue")
@@ -60,7 +60,7 @@ cor.temp_count <- cor(bike[,c("temp","count")])
 cor.temp_count
 ```
 
-```{r pressure, echo=FALSE}
+```{r, echo=FALSE}
 count_season <- ggplot(bike, aes(x = season, y = count)) + 
         geom_boxplot(aes(color = factor(season)),alpha = 0.5)
 count_season
